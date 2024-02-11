@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<style>
+			button {
+				margin-top: 15px;
+				/* border: 10px solid red; */
+			}
+		</style>
+	</head>
+	<body>
+		<% if(!logged_in){ %>
+
+		<div class="login-section">
+			<h3>LOGIN:</h3>
+			<a href="/login"><button>login</button></a>
+			<br />
+			<h3>Register</h3>
+			<a href="/register/0"><button>Super Admin register</button></a>
+			<br />
+			<a href="/register/1"><button>Admin register</button></a>
+			<br />
+			<a href="/register/2"><button>Moderator register</button></a>
+			<br />
+			<a href="/register/3"><button>user register</button></a>
+		</div>
+		<% } else {%>
+            <!-- <h1>condition working</h1> -->
+            <h1><%= user.username %></h1>
+            <h2><%= user.role %></h2>
+            <h3><%=user.description %></h3>
+
+            <a href="/blogs"><button>My Blogs</button></a> <br>
+                <% if(user.level <2){ %> 
+                    <a href="/manage"><button>Manage Users</button></a>
+                <% } %>
+            <br><br><br>
+            <a href="/logout"><button>Log Out</button></a>
+         <% } %>
+
+         
+        
+
+	</body>
+</html>

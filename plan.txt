@@ -1,0 +1,14 @@
+users:
+    super
+    admin
+    mod
+    user
+
+page:
+    login
+    register
+    logged_in?
+        user name
+        user type
+        blog links
+        manage users

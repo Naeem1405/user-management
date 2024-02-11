@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage</title>
+</head>
+<body>
+    <h1>Manage other users</h1>
+    <h3>users:</h3>
+    <table>
+        <% for(var i = 0; i < data.length; i++){ %>
+            <% if(data[i].is_deleted == false){ %>
+                <tr>
+                    <td><%=data[i].username %></td>
+                    <td><a href="/delete/<%=data[i].username %>">Delete</a></td>
+                </tr>
+            <% } %>
+        <% } %>
+    </table>
+
+
+    <h3>deletion waiting for confirmation:</h3>
+    <table>
+        <% for(var i = 0; i < data.length; i++){ %>
+            <% if(data[i].is_deleted == true){ %>
+                <tr>
+                    <td><%=data[i].username %></td>
+                    <td><a href="/permanentdelete/<%=data[i].username %>">Delete</a></td>
+                </tr>
+            <% } %>
+        <% } %>
+    </table>
+
+    <a href="/"><button>Home</button></a>
+    
+</body>
+</html>

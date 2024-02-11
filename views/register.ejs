@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="/register/<%=level%>", method="post">
+        <label for="username">username: </label>
+        <input type="text" name="username" id="" required>
+        <br> <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="" required>
+        <br> <br>
+        <button type="submit">Register</button>
+    </form>
+    <br> <br>
+    <% if(msg == 'success'){ %> 
+        <h3>Account Created</h3>
+   <% } else if ( msg == "failed"){ %> 
+        <h3>User exists with this username</h3>
+   <% } %> 
+   <br><br><br>
+   <a href="/"><button>Home</button></a>
+    
+    
+</body>
+</html>

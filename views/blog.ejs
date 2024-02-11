@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>My Blogs</h1>
+    <% if(blogs.length == 0){ %>
+        <h3>No blogs</h3>
+    <% } else { %>
+        <ul>
+        <% for(var i = 0; i < blogs.length; i++){ %>
+            <li>
+            <a href="/blogs/<%=i%>"><%=blogs[i].title %></a>
+        </li>
+        <% } %>
+    </ul>
+    <% } %>
+
+    <br> <br> <br>
+
+    <% if(level < 3){ %>
+        <a href="/create"><button>Create New Post</button></a>
+        
+    <% } else{ %>
+        <h1>I can't create blog post</h1>
+    <% } %>
+
+    <br> <br> <br>
+    <a href="/"><button>Home  </button></a>
+
+
+
+    
+</body>
+</html>
