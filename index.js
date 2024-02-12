@@ -137,7 +137,7 @@ app.post("/create", async (req, res) => {
 			{ username: logged_user.username },
 			{ $push: { blogs: { title: req.body.title, body: req.body.body } } }
 		);
-		update_data();
+		await update_data();
 
 		return res.redirect("/blogs");
 	} else {
@@ -153,7 +153,6 @@ app.get("/logout", (req, res) => {
 
 async function update_data() {
 	var _user = await userModel.find({ username: logged_user.username });
-	console.log(_user);
 	logged_user = _user[0];
 }
 
